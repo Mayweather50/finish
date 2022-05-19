@@ -1,0 +1,963 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7630CB2D-1612-4F52-AF1A-E4430F81BB6C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WPF_Biblioteka</RootNamespace>
+    <AssemblyName>WPF_Biblioteka</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BoDi, Version=1.5.0.0, Culture=neutral, PublicKeyToken=ff7cd5ea2744b496, processorArchitecture=MSIL">
+      <HintPath>..\packages\BoDi.1.5.0\lib\net45\BoDi.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.2\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.4\lib\net48\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="FtpFileDialog, Version=1.0.7517.23342, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FtpFileDialog.1.1.7517.23342\lib\net40\FtpFileDialog.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.4.1.0, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Gherkin, Version=19.0.3.0, Culture=neutral, PublicKeyToken=86496cfa5b4a5851, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gherkin.19.0.3\lib\net45\Gherkin.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=2.0.4.3, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.2.0.4\lib\net452\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=4.3.0.3, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.4.3.0\lib\net452\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="SpecFlow.Internal.Json, Version=1.0.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.Internal.Json.1.0.8\lib\net45\SpecFlow.Internal.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.6.0.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.6.0.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="TechTalk.SpecFlow, Version=3.9.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpecFlow.3.9.52\lib\net461\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Account\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Account\NotesPage.xaml.cs">
+      <DependentUpon>NotesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Account\PaymentPage.xaml.cs">
+      <DependentUpon>PaymentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Account\SoundsPage.xaml.cs">
+      <DependentUpon>SoundsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.xaml.cs">
+      <DependentUpon>Profile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setting.xaml.cs">
+      <DependentUpon>Setting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Autorize.xaml.cs">
+      <DependentUpon>Autorize.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Book.xaml.cs">
+      <DependentUpon>Book.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControl\fileDetail.xaml.cs">
+      <DependentUpon>fileDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Index.xaml.cs">
+      <DependentUpon>Index.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\Genres.xaml.cs">
+      <DependentUpon>Genres.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Menu\GenresList.xaml.cs">
+      <DependentUpon>GenresList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MainModel.cs" />
+    <Compile Include="RelayCommand.cs" />
+    <Compile Include="SideBar.xaml.cs">
+      <DependentUpon>SideBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SidePanel.xaml.cs">
+      <DependentUpon>SidePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Analytics.xaml.cs">
+      <DependentUpon>Analytics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User.xaml.cs">
+      <DependentUpon>User.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\DesktopViewModel.cs" />
+    <Compile Include="ViewModel\DocumentViewModel.cs" />
+    <Compile Include="ViewModel\CursorViewModel.cs" />
+    <Compile Include="ViewModel\DownloadViewModel.cs" />
+    <Compile Include="ViewModel\HomeViewModel.cs" />
+    <Compile Include="ViewModel\MovieViewModel.cs" />
+    <Compile Include="ViewModel\MusicViewModel.cs" />
+    <Compile Include="ViewModel\NavigationViewModel.cs" />
+    <Compile Include="ViewModel\PCViewModel.cs" />
+    <Compile Include="ViewModel\PictureViewModel.cs" />
+    <Compile Include="ViewModel\StartupViewModel.cs" />
+    <Compile Include="ViewModel\TrashViewModel.cs" />
+    <Compile Include="View\DesktopView.xaml.cs">
+      <DependentUpon>DesktopView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DocumentView.xaml.cs">
+      <DependentUpon>DocumentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DownloadView.xaml.cs">
+      <DependentUpon>DownloadView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\HomeView.xaml.cs">
+      <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MovieView.xaml.cs">
+      <DependentUpon>MovieView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MusicView.xaml.cs">
+      <DependentUpon>MusicView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PCView.xaml.cs">
+      <DependentUpon>PCView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PictureView.xaml.cs">
+      <DependentUpon>PictureView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\StartupView.xaml.cs">
+      <DependentUpon>StartupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Timer.xaml.cs">
+      <DependentUpon>Timer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrashView.xaml.cs">
+      <DependentUpon>TrashView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Download.xaml.cs">
+      <DependentUpon>Download.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="СС\Beda.xaml.cs">
+      <DependentUpon>Beda.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="СС\Fahrenheit.xaml.cs">
+      <DependentUpon>Fahrenheit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="СС\Hobbit.xaml.cs">
+      <DependentUpon>Hobbit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="СС\Hrenovo.xaml.cs">
+      <DependentUpon>Hrenovo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="СС\Ono.xaml.cs">
+      <DependentUpon>Ono.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="СС\Parfume.xaml.cs">
+      <DependentUpon>Parfume.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="СС\Put.xaml.cs">
+      <DependentUpon>Put.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="СС\Reincarnator.xaml.cs">
+      <DependentUpon>Reincarnator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="СС\TrendingBook.xaml.cs">
+      <DependentUpon>TrendingBook.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="СС\TrendingBookOne.xaml.cs">
+      <DependentUpon>TrendingBookOne.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Account\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Account\NotesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Account\PaymentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Account\SoundsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Icons\Icons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Profile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Setting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Autorize.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Book.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControl\fileDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DataTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FontList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImageList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Index.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainMenu.xaml.cs">
+      <DependentUpon>MainMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Menu\Genres.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Menu\GenresList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SideBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SidePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\MainStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Templates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\LightTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Analytics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DesktopView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DocumentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DownloadView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\HomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MovieView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MusicView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PCView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PictureView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\StartupView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Timer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TrashView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Download.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="СС\Beda.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="СС\Fahrenheit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="СС\Hobbit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="СС\Hrenovo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="СС\Ono.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="СС\Parfume.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="СС\Put.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="СС\Reincarnator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="СС\TrendingBook.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="СС\TrendingBookOne.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="Fonts\OpenSans-SemiBold.ttf" />
+    <Resource Include="Fonts\Saira-SemiBold.ttf" />
+    <Resource Include="Fonts\OpenSans-Regular.ttf" />
+    <Resource Include="Fonts\Cairo-SemiBold.ttf" />
+    <Resource Include="Fonts\Roboto-Regular.ttf" />
+    <Resource Include="Fonts\LCDM2B__.ttf" />
+    <Resource Include="Fonts\LCDM2L__.ttf" />
+    <Resource Include="Fonts\LCDM2N__.ttf" />
+    <Resource Include="Fonts\LCDMono2 Bold.ttf" />
+    <Resource Include="Fonts\LCDMono2 Light.ttf" />
+    <Resource Include="Fonts\LCDMono2 Ultra.ttf" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Audio.png" />
+    <Resource Include="Assets\Book.png" />
+    <Resource Include="Assets\Genres.png" />
+    <Resource Include="Assets\Like.png" />
+    <Resource Include="Assets\News.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\AC_01.png" />
+    <Resource Include="Assets\AC_02.png" />
+    <Resource Include="Assets\AC_03.png" />
+    <Resource Include="Assets\AT_04.png" />
+    <Resource Include="Assets\A_01.png" />
+    <Resource Include="Assets\A_02.png" />
+    <Resource Include="Assets\A_03.png" />
+    <Resource Include="Assets\CL_01.png" />
+    <Resource Include="Assets\CT_03.png" />
+    <Resource Include="Assets\C_01.png" />
+    <Resource Include="Assets\C_02.png" />
+    <Resource Include="Assets\C_03.png" />
+    <Resource Include="Assets\DT_01.png" />
+    <Resource Include="Assets\D_01.png" />
+    <Resource Include="Assets\D_02.png" />
+    <Resource Include="Assets\D_03.png" />
+    <Resource Include="Assets\H.png" />
+    <Resource Include="Assets\IND_1.png" />
+    <Resource Include="Assets\I_01.png" />
+    <Resource Include="Assets\I_02.png" />
+    <Resource Include="Assets\I_03.png" />
+    <Resource Include="Assets\Logo.png" />
+    <Resource Include="Assets\L_01.png" />
+    <Resource Include="Assets\MN_01.png" />
+    <Resource Include="Assets\MT_02.png" />
+    <Resource Include="Assets\MX_01.png" />
+    <Resource Include="Assets\M_01.png" />
+    <Resource Include="Assets\M_02.png" />
+    <Resource Include="Assets\M_03.png" />
+    <Resource Include="Assets\NOT_01.png" />
+    <Resource Include="Assets\PWD_01.png" />
+    <Resource Include="Assets\P_01.png" />
+    <Resource Include="Assets\P_02.png" />
+    <Resource Include="Assets\P_03.png" />
+    <Resource Include="Assets\RS_01.png" />
+    <Resource Include="Assets\R_01.png" />
+    <Resource Include="Assets\SL_01.png" />
+    <Resource Include="Assets\SL_02.png" />
+    <Resource Include="Assets\SL_03.png" />
+    <Resource Include="Assets\SMO_1.png" />
+    <Resource Include="Assets\SMO_2.png" />
+    <Resource Include="Assets\SMT_1.png" />
+    <Resource Include="Assets\SMT_2.png" />
+    <Resource Include="Assets\ST_01.png" />
+    <Resource Include="Assets\ST_02.png" />
+    <Resource Include="Assets\ST_03.png" />
+    <Resource Include="Assets\ST_05.png" />
+    <Resource Include="Assets\S_01.png" />
+    <Resource Include="Assets\S_02.png" />
+    <Resource Include="Assets\S_03.png" />
+    <Resource Include="Assets\up22.png" />
+    <Resource Include="Assets\U_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\icons_search.png" />
+    <Resource Include="Assets\icon_search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\online-course.png" />
+    <Resource Include="Assets\open-book.png" />
+    <Resource Include="Assets\open-book1.png" />
+    <Resource Include="Assets\open-book2.png" />
+    <Resource Include="Assets\open-book3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\headphone %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\audio-book.png" />
+    <Resource Include="Assets\audio-book1.png" />
+    <Resource Include="Assets\audio-book2.png" />
+    <Resource Include="Assets\audio-book3.png" />
+    <Resource Include="Assets\audio-book4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\fire %281%29.png" />
+    <Resource Include="Assets\fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\open-book5.png" />
+    <Resource Include="Assets\open-book4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\game.png" />
+    <Resource Include="Assets\game1.png" />
+    <Resource Include="Assets\game2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\galaxy.png" />
+    <Resource Include="Assets\galaxy1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\settings.png" />
+    <Resource Include="Assets\settings1.png" />
+    <Resource Include="Assets\settings2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\settings3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\gormon.jpg" />
+    <Resource Include="Assets\pofigizm.jpg" />
+    <Resource Include="Assets\soznanie.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\login.png" />
+    <Resource Include="Images\login1.png" />
+    <Resource Include="Images\login2.png" />
+    <Resource Include="Images\login3.png" />
+    <Resource Include="Images\login4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\intelekt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\bf1.jpg" />
+    <Resource Include="Assets\cod.jpg" />
+    <Resource Include="Assets\dh2.jpg" />
+    <Resource Include="Assets\fh.png" />
+    <Resource Include="Assets\gg.png" />
+    <Resource Include="Assets\wt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\WPFBook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\microsoft.png" />
+    <Resource Include="Assets\windows-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\note_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Music_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\images1.jpg" />
+    <Resource Include="Assets\images2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\alarm_icon.png" />
+    <Resource Include="Assets\analytics_icon.png" />
+    <Resource Include="Assets\android_icon.png" />
+    <Resource Include="Assets\angular_icon.png" />
+    <Resource Include="Assets\audio_icon.png" />
+    <Resource Include="Assets\back_icon.png" />
+    <Resource Include="Assets\book_icon.png" />
+    <Resource Include="Assets\calendar_icon.png" />
+    <Resource Include="Assets\channelIcon.png" />
+    <Resource Include="Assets\channel_icon.png" />
+    <Resource Include="Assets\chart_icon.png" />
+    <Resource Include="Assets\clap_icon.png" />
+    <Resource Include="Assets\close_icon.png" />
+    <Resource Include="Assets\close_mo_icon.png" />
+    <Resource Include="Assets\Desktop_Icon.png" />
+    <Resource Include="Assets\Document_Icon.png" />
+    <Resource Include="Assets\Download_Icon.png" />
+    <Resource Include="Assets\drive_icon.png" />
+    <Resource Include="Assets\export_icon.png" />
+    <Resource Include="Assets\file_icon.png" />
+    <Resource Include="Assets\film_icon.png" />
+    <Resource Include="Assets\flutter_icon.png" />
+    <Resource Include="Assets\folder_icon.png" />
+    <Resource Include="Assets\headphone_icon.png" />
+    <Resource Include="Assets\Home_Icon.png" />
+    <Resource Include="Assets\html_icon.png" />
+    <Resource Include="Assets\Images_Icon.png" />
+    <Resource Include="Assets\invoice_icon.png" />
+    <Resource Include="Assets\javascript_icon.png" />
+    <Resource Include="Assets\Movies_Icon.png" />
+    <Resource Include="Assets\movie_icon.png" />
+    <Resource Include="Assets\musical_icon.png" />
+    <Resource Include="Assets\network_icon.png" />
+    <Resource Include="Assets\notepad_icon.png" />
+    <Resource Include="Assets\order_icon.png" />
+    <Resource Include="Assets\password_icon.png" />
+    <Resource Include="Assets\pctrash_icon.png" />
+    <Resource Include="Assets\pc_icon.png" />
+    <Resource Include="Assets\picture_icon.png" />
+    <Resource Include="Assets\printer_icon.png" />
+    <Resource Include="Assets\print_icon.png" />
+    <Resource Include="Assets\python_icon.png" />
+    <Resource Include="Assets\services_icon.png" />
+    <Resource Include="Assets\stock_icon.png" />
+    <Resource Include="Assets\studio_icon.png" />
+    <Resource Include="Assets\swift_icon.png" />
+    <Resource Include="Assets\Trash_Icon.png" />
+    <Resource Include="Assets\usb_icon.png" />
+    <Resource Include="Assets\vsc_icon.png" />
+    <Resource Include="Assets\vs_icon.png" />
+    <Resource Include="Assets\webcam_icon.png" />
+    <Resource Include="Assets\wifi_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\car.png" />
+    <Resource Include="Assets\pistol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\download.png" />
+    <Resource Include="Assets\download1.png" />
+    <Resource Include="Assets\download2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\down.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\micro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\photo.png" />
+    <Resource Include="Assets\wpf_book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\down1.png" />
+    <Resource Include="Assets\down2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\gta5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ParentFolder_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OpenFolder_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FolderOpened_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FolderClosed_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Document_16x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\image_wpf.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\image_wpfbook.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\pofig.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Harry.jpg" />
+    <Resource Include="Images\Nill.jpg" />
+    <Resource Include="Images\Sapiens.jpg" />
+    <Resource Include="Images\Shantaram.jpg" />
+    <Resource Include="Images\soznanie.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\minimized.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\user.png" />
+    <Resource Include="Assets\user1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\music-note.png" />
+    <Resource Include="Assets\music-note1.png" />
+    <Resource Include="Assets\music-note2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Ono.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Ono_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Hrenovo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Put.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Cursor\cursor.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Cursor\cursores.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\451.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Beda.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Hobbit.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Parfumer.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\парфюмер.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Реинкарнатор.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Cursor\cursor_2.cur" />
+    <Resource Include="Cursor\cursor_3.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\click.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\clicked.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\services.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\servis.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\servis_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\ba.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\da.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\za.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Cursor\cursor-carnage.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\clik.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\iron_man.png" />
+    <Resource Include="Assets\marvel-carnage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\cursors.png" />
+    <Resource Include="Assets\sliz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Avatars\Avatar-2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\slack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Photo\Dostoevsky.jpg" />
+    <Resource Include="Photo\Instityt.jpg" />
+    <Resource Include="Photo\raduga.jpg" />
+    <Resource Include="Photo\stiven-hoking.jpg" />
+    <Resource Include="Photo\Реинкарнатор.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\img_about.png" />
+    <Resource Include="Assets\img_acoustic.png" />
+    <Resource Include="Assets\img_album.png" />
+    <Resource Include="Assets\img_arrow.png" />
+    <Resource Include="Assets\img_artist.png" />
+    <Resource Include="Assets\img_electronic.png" />
+    <Resource Include="Assets\img_exit.png" />
+    <Resource Include="Assets\img_folder.png" />
+    <Resource Include="Assets\img_genre.png" />
+    <Resource Include="Assets\img_hiphop.png" />
+    <Resource Include="Assets\img_history.png" />
+    <Resource Include="Assets\img_home.png" />
+    <Resource Include="Assets\img_hotkey.png" />
+    <Resource Include="Assets\img_input.png" />
+    <Resource Include="Assets\img_jazz.png" />
+    <Resource Include="Assets\img_metal.png" />
+    <Resource Include="Assets\img_movies.png" />
+    <Resource Include="Assets\img_music.png" />
+    <Resource Include="Assets\img_playlist.png" />
+    <Resource Include="Assets\img_pop.png" />
+    <Resource Include="Assets\img_rock.png" />
+    <Resource Include="Assets\img_search.png" />
+    <Resource Include="Assets\img_setting.png" />
+    <Resource Include="Assets\img_songs.png" />
+    <Resource Include="Assets\max_def.png" />
+    <Resource Include="Assets\max_mo.png" />
+    <Resource Include="Assets\shutdown_def.png" />
+    <Resource Include="Assets\shutdown_mo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\1.jpg" />
+    <Resource Include="Assets\2.jpg" />
+    <Resource Include="Assets\3.png" />
+    <Resource Include="Assets\4.jpg" />
+    <Resource Include="Assets\5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\space-cursor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Cursor\cursor-fire.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\fire-cursor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\otchet.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets'))" />
+    <Error Condition="!Exists('..\packages\SpecFlow.3.9.52\build\SpecFlow.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SpecFlow.3.9.52\build\SpecFlow.targets'))" />
+  </Target>
+  <Import Project="..\packages\SpecFlow.3.9.52\build\SpecFlow.targets" Condition="Exists('..\packages\SpecFlow.3.9.52\build\SpecFlow.targets')" />
+</Project>

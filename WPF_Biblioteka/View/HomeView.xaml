@@ -1,0 +1,110 @@
+﻿<UserControl x:Class="WPF_Biblioteka.View.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF_Biblioteka.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="650">
+
+
+    <UserControl.Style>
+        <Style>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="UserControl.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                             From="0.0"
+                                             To="1.0"
+                                             Duration="0:0:0.5" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Style>
+
+    <Grid Background="#303030">
+
+        <TextBlock Text="Выберете курсор"
+                   FontSize="24"
+                   FontFamily="/Fonts/OpenSans-Regular.ttf #Open Sans Regular"
+                   Foreground="#DDDDDD"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Margin="5,12,0,0" />
+
+
+        <ItemsControl ItemsSource="{Binding HomeSourceCollection}"
+                      Height="350"
+                      Width="650"
+                      HorizontalAlignment="Center"
+                      Margin="0,40,0,0">
+
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <!--<RadioButton Content="{Binding HomeName}"
+                                 CommandParameter="{Binding HomeName}"
+                                 Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.CursorCommand}"
+                                 Tag="{Binding HomeImage}"
+                                 Style="{StaticResource GridButtonStyle }"
+                                 GroupName="HomeGroup" />-->
+
+
+                    <Button Padding="5" Click="Button_Click" RenderTransformOrigin="0.904,2.406" Height="Auto" Margin="25,-30,5,-5"
+                    Style="{StaticResource LightweightButton}" Width="42">
+                        <StackPanel Orientation="Horizontal" Margin="-32,9,5,-9" >
+                            <Image Source="/Assets/space-cursor.png" Height="34" Width="32" RenderTransformOrigin="1.804,-0.043" />
+
+                        </StackPanel>
+
+                    </Button>
+
+
+
+
+
+
+                </DataTemplate>
+
+
+
+            </ItemsControl.ItemTemplate>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="5"
+                                 Rows="3" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
+        </ItemsControl>
+
+        <Button Padding="5" Click="Cursor_Click" RenderTransformOrigin="0.904,2.406" Height="Auto" Margin="188,9,294,237"
+                    Style="{StaticResource LightweightButton}">
+            <StackPanel Orientation="Horizontal" Margin="-65,9,125,-9" >
+                <Image Source="/Assets/sliz.png" Height="34" Width="32" RenderTransformOrigin="1.804,-0.043" />
+
+            </StackPanel>
+
+        </Button>
+
+        <Button Padding="5" Click="Fire_Click" RenderTransformOrigin="0.904,2.406" Height="Auto" Margin="188,9,294,237"
+                    Style="{StaticResource LightweightButton}">
+            <StackPanel Orientation="Horizontal" Margin="18,9,5,-9" >
+                <Image Source="/Assets/fire-cursor.png" Height="34" Width="32" RenderTransformOrigin="1.804,-0.043" />
+
+            </StackPanel>
+
+        </Button>
+
+
+
+
+
+
+
+    </Grid>
+
+
+</UserControl>

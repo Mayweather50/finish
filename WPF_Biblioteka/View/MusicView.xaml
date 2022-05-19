@@ -1,0 +1,155 @@
+﻿<UserControl x:Class="WPF_Biblioteka.View.MusicView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF_Biblioteka.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="650">
+
+
+    <UserControl.Style>
+        <Style>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="UserControl.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                             From="0.0"
+                                             To="1.0"
+                                             Duration="0:0:0.5">
+
+                            </DoubleAnimation>
+
+
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Style>
+
+
+    <Grid Background="#303030">
+
+        <TextBlock Text="Music"
+                   FontSize="24"
+                   FontFamily="/Fonts/OpenSans-Regular.ttf #Open Sans Regular"
+                   Foreground="#DDDDDD"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Margin="5,12,0,0" />
+
+        <Grid Height="261"
+              Width="192"
+              HorizontalAlignment="Right"
+              VerticalAlignment="Top"
+              Margin="0,-87,-4,0">
+
+            <TextBox x:Name="SearchBox"
+                     Text="{Binding FilterText, UpdateSourceTrigger=PropertyChanged}"
+                     Style="{StaticResource SearchBoxStyle}" />
+
+            <TextBlock Text="Search"
+                       Style="{StaticResource SearchTextStyle}" />
+
+        </Grid>
+
+        <ItemsControl ItemsSource="{Binding MusicSourceCollection}"
+                      Height="285"
+                      Width="650"
+                      HorizontalAlignment="Center"
+                      Margin="0,40,0,0">
+
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+
+
+
+
+
+                    <!--<RadioButton Content="{Binding MusicName}"                                
+                                 Tag="{Binding MusicImage}"
+                                 Style="{StaticResource MusicButtonStyle}"
+                                 GroupName="DesktopGroup" />-->
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="3"
+                                 Rows="4" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
+        </ItemsControl>
+
+        <Button Padding="5" Click="Button_Click" RenderTransformOrigin="0.904,2.406" Height="Auto" Margin="41,9,521,237" Background="#FF16181E" BorderBrush="#FF16181E"
+                    Style="{StaticResource LightweightButton}">
+            <StackPanel Orientation="Horizontal" Margin="-22,-33,-8,-40" >
+                <Image Source="/Assets/note_icon.png" Height="58" Width="48" RenderTransformOrigin="1.804,-0.043" />
+                <TextBlock Foreground="White" FontSize="14"  FontFamily="Arial" Margin="-50,148,12,76" Width="98">Достоевский</TextBlock>
+
+
+            </StackPanel>
+
+
+        </Button>
+
+        <Button Padding="5" Click="Button_Click"  RenderTransformOrigin="0.904,2.406" Height="Auto" Margin="165,9,366,237" Background="#FF16181E" BorderBrush="#FF16181E"
+                    Style="{StaticResource LightweightButton}">
+            <StackPanel Orientation="Horizontal" Margin="-22,-33,-8,-40" >
+                <Image Source="/Assets/note_icon.png" Height="58" Width="48" RenderTransformOrigin="1.804,-0.043" />
+                <TextBlock Foreground="White" FontSize="14"  FontFamily="Arial" Margin="-50,148,12,76" Width="98">Достоевский</TextBlock>
+
+
+            </StackPanel>
+
+
+        </Button>
+
+
+        <Button Padding="5" Click="Button_Click" RenderTransformOrigin="0.904,2.406" Height="Auto" Margin="292,9,274,237" Background="#FF16181E" BorderBrush="#FF16181E"
+                    Style="{StaticResource LightweightButton}">
+            <StackPanel Orientation="Horizontal" Margin="-22,-33,-8,-40" >
+                <Image Source="/Assets/note_icon.png" Height="58" Width="48" RenderTransformOrigin="1.804,-0.043" />
+                <TextBlock Foreground="White" FontSize="14"  FontFamily="Arial" Margin="-50,148,12,76" Width="98">Достоевский</TextBlock>
+
+
+            </StackPanel>
+
+
+        </Button>
+
+
+        <Button Padding="5" Click="Button_Click" RenderTransformOrigin="0.904,2.406" Height="Auto" Margin="418,9,154,237" Background="#FF16181E" BorderBrush="#FF16181E"
+                    Style="{StaticResource LightweightButton}">
+            <StackPanel Orientation="Horizontal" Margin="-22,-33,-8,-40" >
+                <Image Source="/Assets/note_icon.png" Height="58" Width="48" RenderTransformOrigin="1.804,-0.043" />
+                <TextBlock Foreground="White" FontSize="14"  FontFamily="Arial" Margin="-50,148,12,76" Width="98">Достоевский</TextBlock>
+
+
+            </StackPanel>
+
+
+        </Button>
+
+
+        <Button Padding="5" Click="Button_Click" RenderTransformOrigin="0.904,2.406" Height="Auto" Margin="545,9,32,237" Background="#FF16181E" BorderBrush="#FF16181E"
+                    Style="{StaticResource LightweightButton}">
+            <StackPanel Orientation="Horizontal" Margin="-22,-33,-8,-40" >
+                <Image Source="/Assets/note_icon.png" Height="58" Width="48" RenderTransformOrigin="1.804,-0.043"/>
+                <TextBlock Foreground="White" FontSize="14"  FontFamily="Arial" Margin="-50,148,12,76" Width="98">Достоевский</TextBlock>
+
+
+            </StackPanel>
+
+
+        </Button>
+
+
+
+
+    </Grid>
+
+</UserControl>

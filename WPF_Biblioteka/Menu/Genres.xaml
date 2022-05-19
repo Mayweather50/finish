@@ -1,0 +1,42 @@
+﻿<Page x:Class="WPF_Biblioteka.Menu.Genres"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPF_Biblioteka.Menu"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Genres">
+
+    <Grid>
+        <ScrollViewer
+            Grid.Column="1"
+            Name="cardContainerSV"
+            HorizontalScrollBarVisibility="Disabled">
+            <StackPanel
+                Orientation="Horizontal"
+                Background="Transparent"
+                ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                ScrollViewer.CanContentScroll="True">
+                <local:GenresList >
+                    
+                </local:GenresList>
+
+
+            </StackPanel>
+
+        </ScrollViewer>
+
+        <Button
+            Name="navLeftBtn"
+            Click="navLeftBtn_Click"
+            Grid.Column="1"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"
+            Height="38" Width="38"/>
+
+
+
+    </Grid>
+</Page>

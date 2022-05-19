@@ -1,0 +1,28 @@
+﻿<Window x:Class="WPF_Biblioteka.View.Timer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Biblioteka.View"
+        mc:Ignorable="d"
+        Title="Timer" Height="300" Width="786"
+        Background="#1D2E32"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None">
+    <Grid>
+
+
+
+        <Label Content="00:00:00:00"  Foreground="White" FontFamily="{StaticResource NotoSans}"  Name="Label" FontSize="72"  HorizontalAlignment="Left" Margin="159,49,0,0" VerticalAlignment="Top" Width="379" Height="96"/>
+        <Button Margin="44,193,597,60" Click="Button_Start" Content="Start" Background="#00CD97" Height="Auto" Width="137"/>
+
+
+        <Button Content="Stop" Click="Button_Stop"  Background="#F7565B" HorizontalAlignment="Left" Margin="288,193,0,0" VerticalAlignment="Top" Width="137" Height="33"/>
+        <Button Content="Reset" Click="Button_Reset" Background="#1982C4" HorizontalAlignment="Left" Margin="548,191,0,0" VerticalAlignment="Top" Width="137" Height="33"/>
+
+
+
+
+    </Grid>
+
+</Window>
